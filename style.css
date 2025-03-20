@@ -1,0 +1,94 @@
+body{
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 500;
+    background-color: rgb(250, 255, 255);
+}
+
+
+.canvas-container {
+    display: flex;
+
+}
+
+#mcanvas {
+    border-radius: 10px;
+    border-width: 4px;
+    border-color: rgb(6, 20, 99);
+    border-style: solid;
+    margin-left: 100px;
+}
+
+.main {
+    margin-left: 20px; 
+}
+
+
+.heading{
+    font-size: 50px;
+    font-family: "Silkscreen", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:600;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0,
+      "wdth" 100,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
+  
+}
+
+
+
+#area{
+  margin-top:0px;
+  width:250px;
+  height:335px;
+  resize:none;
+  border-radius: 10px;
+  border-width: 4px;
+  border-color: rgb(6, 20, 99);
+  
+}
+  
+#submit{
+  margin-top: 15px;
+  
+  width:250px;
+  height:150px;
+  font-weight: 600;
+  font-size: 30px;
+  border-radius: 10px;
+  border-width:4px;
+  background-color: rgb(255, 255, 255);
+}
+
+#submit:hover{
+  background-color: rgb(0, 37, 96) !important;
+  color:white;
+  
+}
+
+
+#voiceButton{
+  margin-top:10px;
+  width:250px;
+  border-width:4px;
+  border-radius: 10px;
+  border-color: black;
+}
+
+#yesButton{
+  width:1230px;
+  height:60px;
+  background-color: rgb(250, 255, 255);
+  border-radius: 10px;
+  border-color: rgb(250, 255, 255);
+  border-style:solid;
+}
