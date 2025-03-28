@@ -8,6 +8,8 @@ for (let i = 1; i < 21; i++) {
 
 let currentIndex = 0;
 let confirmedSquares = [];
+let clickCount = 0; 
+let clickTimer = null; 
 
 const canvas = document.getElementById("mcanvas");
 const ctx = canvas.getContext("2d");
@@ -41,12 +43,34 @@ function updateQuestionaire(square) {
 }
 
 function handleYes() {
-    const square = grid[currentIndex];
-    confirmedSquares.push(square);
-    updateTextarea();
+    clickCount++; 
 
-    
+    if (clickCount === 1) {
+       
+        clickTimer = setTimeout(() => {
 
+            const square = grid[currentIndex];
+            confirmedSquares.push(square);
+            updateTextarea();
+
+            currentIndex++;
+            setTimeout(() => startGridCheck(), 2000);
+
+            clickCount = 0;
+            clickTimer = null;
+        }, 300);
+    } else if (clickCount === 2) {
+       
+        clearTimeout(clickTimer);
+        skipCoordinate();
+
+        clickCount = 0;
+        clickTimer = null;
+    }
+}
+
+function skipCoordinate() {
+    console.log("Skipping coordinate:", grid[currentIndex]);
     currentIndex++;
     setTimeout(() => startGridCheck(), 500);
 }
@@ -56,8 +80,7 @@ function updateTextarea() {
     area.value = confirmedSquares.join(", ");
 }
 
-function submit(){
-  var copyText = document.getElementById("area");
-  navigator.clipboard.writeText(copyText.value);
-
+function submit() {
+    var copyText = document.getElementById("area");
+    navigator.clipboard.writeText(copyText.value);
 }
